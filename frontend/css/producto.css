@@ -1,0 +1,282 @@
+/* =====================================================
+   AZKA - Página de detalle de producto
+   (solo galería, información y formulario)
+   Los estilos base, header y footer están en global.css
+   ===================================================== */
+
+button,
+input {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* ---------- Producto (galería + información) ---------- */
+.producto {
+    display: flex;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 30px 60px;
+}
+
+/* ---------- Galería ---------- */
+.galeria {
+    display: flex;
+    gap: 15px;
+}
+
+.miniaturas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.miniatura-item {
+    width: 65px;
+    height: 80px;
+    background-color: var(--color-caja);
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.miniatura-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Miniatura seleccionada */
+.miniatura-item.activa {
+    border-color: var(--color-acento);
+}
+
+.foto-principal {
+    position: relative;
+    width: 620px;
+    background-color: var(--color-caja);
+}
+
+/* Transición simple al cambiar de imagen */
+.foto-principal img {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s;
+}
+
+.foto-principal img.opaca {
+    opacity: 0;
+}
+
+/* Botones circulares anterior / siguiente */
+.btn-anterior,
+.btn-siguiente {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background-color: #000000;
+    color: var(--color-texto);
+    font-size: 16px;
+}
+
+.btn-anterior { left: 15px; }
+.btn-siguiente { right: 15px; }
+
+/* Contador "1 / 4" */
+.contador {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* ---------- Información del producto ---------- */
+.info-producto {
+    flex: 1;
+    padding-top: 10px;
+}
+
+.etiqueta {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--color-acento);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.titulo {
+    margin-bottom: 15px;
+    color: var(--color-suave);
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.precio {
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.info-producto hr {
+    border: none;
+    border-top: 1px solid var(--color-borde);
+    margin: 25px 0;
+}
+
+.descripcion {
+    margin-bottom: 35px;
+    color: var(--color-suave);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ---------- Formulario ---------- */
+.form-compra {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.campo-titulo {
+    color: var(--color-texto);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.campo-cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.guia-tallas {
+    border-bottom: 1px solid var(--color-acento);
+    padding-bottom: 2px;
+    color: var(--color-acento);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+/* Tallas: el radio se oculta y el label hace de caja */
+.opciones-talla {
+    display: flex;
+    gap: 12px;
+}
+
+.opciones-talla input {
+    position: absolute;
+    opacity: 0;
+}
+
+.opciones-talla label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 40px;
+    border: 1px solid var(--color-borde);
+    color: var(--color-texto);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* Talla elegida */
+.opciones-talla input:checked + label {
+    border: 2px solid var(--color-acento);
+    font-weight: bold;
+}
+
+/* Talla agotada (XL) */
+.opciones-talla input:disabled + label {
+    color: #555555;
+    text-decoration: line-through;
+    cursor: not-allowed;
+}
+
+.aviso {
+    margin-top: 12px;
+    color: var(--color-suave);
+    font-size: 12px;
+}
+
+/* Cantidad: botón −, número y botón + */
+.control-cantidad {
+    display: flex;
+    margin-top: 12px;
+}
+
+.btn-menos,
+.btn-mas {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--color-borde);
+    background-color: transparent;
+    color: var(--color-texto);
+    font-size: 18px;
+}
+
+.numero-cantidad {
+    width: 55px;
+    height: 40px;
+    border: 1px solid var(--color-borde);
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+    color: var(--color-texto);
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Botón agregar al carrito */
+.btn-carrito {
+    width: 100%;
+    border: none;
+    padding: 18px;
+    background-color: var(--color-acento);
+    color: var(--color-texto);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.btn-carrito:hover {
+    background-color: var(--color-acento-oscuro);
+}
+
+/* Mensaje de confirmación (lo crea el JavaScript) */
+.mensaje {
+    font-size: 13px;
+    color: var(--color-acento);
+}
+
+/* ---------- Móvil ---------- */
+@media (max-width: 900px) {
+    .producto {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .foto-principal {
+        width: 100%;
+        order: -1;
+    }
+
+    .galeria {
+        flex-direction: column;
+    }
+
+    .miniaturas {
+        flex-direction: row;
+    }
+}

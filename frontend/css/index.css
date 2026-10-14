@@ -1,0 +1,188 @@
+/* =====================================================
+   AZKA - Página de inicio (solo banner y productos)
+   Los estilos base, header y footer están en global.css
+   ===================================================== */
+
+/* ---------- Botón principal ---------- */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: var(--color-acento);
+    color: var(--color-texto);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--color-acento-oscuro);
+}
+
+/* ---------- Banner principal ---------- */
+.banner {
+    position: relative;
+    height: 75vh;
+    min-height: 480px;
+    overflow: hidden;
+}
+
+/* Cada imagen ocupa todo el banner.
+   Solo la que tiene .activa se muestra. */
+.banner-imagen {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.6s;
+}
+
+.banner-imagen.activa {
+    opacity: 1;
+}
+
+.banner-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Capa oscura para que el texto se lea sobre la foto */
+.banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+/* Contenido del banner (siempre encima de la capa oscura) */
+.banner-contenido {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.etiqueta {
+    margin-bottom: 15px;
+    color: var(--color-acento);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.banner-titulo {
+    font-size: clamp(60px, 12vw, 140px);
+    font-weight: bold;
+    letter-spacing: 10px;
+    line-height: 1;
+    margin-bottom: 30px;
+}
+
+/* ---------- Productos destacados ---------- */
+.drop {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 60px 30px;
+}
+
+.drop-cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.drop-cabecera h2 {
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.ver-todo {
+    color: var(--color-acento);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: color 0.2s;
+}
+
+.ver-todo:hover {
+    color: var(--color-acento-oscuro);
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.tarjeta {
+    background-color: var(--color-caja);
+    transition: transform 0.2s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta-enlace {
+    display: block;
+}
+
+.tarjeta-foto {
+    position: relative;
+}
+
+.tarjeta-foto img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+/* Estado del producto (disponible, demo, etc.): está en global.css */
+
+.tarjeta-info {
+    padding: 18px;
+}
+
+.tarjeta-info h3 {
+    margin-bottom: 8px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+}
+
+.tarjeta-precio {
+    color: var(--color-suave);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .tarjetas {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .banner {
+        height: 60vh;
+        min-height: 380px;
+    }
+
+    .drop {
+        padding: 40px 20px;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta-foto img {
+        height: 380px;
+    }
+}
