@@ -1,0 +1,202 @@
+/* =====================================================
+   AZKA - Página HISTORIA
+   (solo contenido de esta página: hero, línea de tiempo,
+    valores y cierre)
+   Los estilos base, header y footer están en global.css
+   ===================================================== */
+
+/* ---------- Contenedor principal ---------- */
+.historia {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 50px 30px;
+}
+
+/* ---------- Etiqueta pequeña (como en el banner del inicio) ---------- */
+/* (En index.css ya existe esta clase; se repite aquí porque esta
+    página es HTML puro y solo carga global.css + historia.css) */
+.etiqueta {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: var(--color-acento);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+/* ---------- Botón principal ---------- */
+/* (Mismo estilo que el botón "VER COLECCIÓN" del inicio) */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: var(--color-acento);
+    color: var(--color-texto);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--color-acento-oscuro);
+}
+
+/* =====================================================
+   BLOQUE 1 - Hero: texto a la izquierda, foto a la derecha
+   ===================================================== */
+.historia-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* dos columnas iguales */
+    align-items: center;
+    gap: 50px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.historia-hero-texto h1 {
+    margin-bottom: 20px;
+    font-size: clamp(32px, 5vw, 55px);
+    line-height: 1.1;
+    letter-spacing: 2px;
+}
+
+/* Los párrafos del hero quedan en gris claro para no cansar la vista */
+.historia-hero-texto p {
+    margin-bottom: 15px;
+    color: var(--color-suave);
+    font-size: 15px;
+}
+
+/* La foto se adapta al alto de la columna de texto */
+.historia-hero-foto img {
+    width: 100%;
+    height: 100%;
+    max-height: 520px;
+    object-fit: cover; /* recorta sin deformar */
+}
+
+/* =====================================================
+   BLOQUE 2 - Línea de tiempo
+   ===================================================== */
+.linea-tiempo {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.linea-tiempo h2,
+.valores h2,
+.historia-cta h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+/* Lista de hitos en 4 columnas */
+.hitos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+/* Cada hito tiene un borde superior rojo que simboliza su año */
+.hito {
+    padding-top: 20px;
+    border-top: 2px solid var(--color-acento);
+}
+
+.hito-anio {
+    color: var(--color-acento);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hito h3 {
+    margin: 10px 0;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+}
+
+.hito p {
+    color: var(--color-suave);
+    font-size: 13px;
+}
+
+/* =====================================================
+   BLOQUE 3 - Valores de la marca
+   ===================================================== */
+.valores {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.valores-cajas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Caja oscura de cada valor (mismo fondo que las tarjetas de producto) */
+.valor {
+    padding: 30px;
+    background-color: var(--color-caja);
+}
+
+.valor h3 {
+    margin-bottom: 12px;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.valor p {
+    color: var(--color-suave);
+    font-size: 13px;
+}
+
+/* =====================================================
+   BLOQUE 4 - Cierre con botón hacia el catálogo
+   ===================================================== */
+.historia-cta {
+    padding: 70px 0 20px;
+    text-align: center;
+}
+
+.historia-cta p {
+    margin-bottom: 25px;
+    color: var(--color-suave);
+    font-size: 14px;
+}
+
+/* =====================================================
+   RESPONSIVE (tablet y móvil)
+   ===================================================== */
+
+/* Tablet: la línea de tiempo pasa a 2 columnas */
+@media (max-width: 900px) {
+    .historia-hero {
+        grid-template-columns: 1fr; /* una sola columna */
+    }
+
+    .hitos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .valores-cajas {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Móvil: todo en una columna, texto más compacto */
+@media (max-width: 600px) {
+    .historia {
+        padding: 40px 20px;
+    }
+
+    .hitos {
+        grid-template-columns: 1fr;
+    }
+
+    .historia-hero-foto img {
+        max-height: 380px;
+    }
+}

@@ -1,0 +1,180 @@
+/* =====================================================
+   AZKA - Página CONTACTO
+   (solo título, formulario y datos de contacto)
+   Los estilos base, header y footer están en global.css
+   ===================================================== */
+
+/* ---------- Contenedor principal ---------- */
+.contacto {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 50px 30px;
+}
+
+/* ---------- Título de la página ---------- */
+.contacto-titulo {
+    margin-bottom: 40px;
+}
+
+/* Etiqueta pequeña roja (mismo estilo que en historia/index) */
+.contacto-titulo .etiqueta {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: var(--color-acento);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.contacto-titulo h1 {
+    margin-bottom: 10px;
+    font-size: 35px;
+    letter-spacing: 2px;
+}
+
+.contacto-titulo p {
+    max-width: 520px;
+    color: var(--color-suave);
+    font-size: 14px;
+}
+
+/* =====================================================
+   Dos columnas: formulario (izquierda) y datos (derecha)
+   ===================================================== */
+.contacto-cajas {
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* el formulario ocupa más espacio */
+    gap: 30px;
+}
+
+/* Caja oscura tipo "tarjeta" (mismo fondo que las tarjetas de producto) */
+.formulario-caja,
+.datos-caja {
+    padding: 35px;
+    background-color: var(--color-caja);
+    border-top: 2px solid var(--color-acento); /* línea roja de acento */
+}
+
+.formulario-caja h2,
+.datos-caja h2 {
+    margin-bottom: 25px;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+/* =====================================================
+   Formulario
+   ===================================================== */
+
+/* Cada campo (label + input) apilado verticalmente */
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block; /* ocupa todo el ancho para quedar arriba */
+    margin-bottom: 8px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: var(--color-suave);
+}
+
+/* Input y textarea comparten el mismo estilo base */
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 12px 14px;
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    color: var(--color-texto);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+/* Placeholder en gris (para que no compita con el texto escrito) */
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #6a6a6a;
+}
+
+/* Borde rojo cuando el usuario hace clic dentro del campo */
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: var(--color-acento);
+}
+
+/* La textarea no debe estirarse fuera de control */
+.campo textarea {
+    resize: vertical;
+}
+
+/* Botón ENVIAR (mismo estilo que el botón principal del proyecto) */
+.btn {
+    padding: 14px 28px;
+    background-color: var(--color-acento);
+    border: none;
+    color: var(--color-texto);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--color-acento-oscuro);
+}
+
+/* =====================================================
+   Datos de contacto (columna derecha)
+   ===================================================== */
+.dato {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+/* Se quita el borde al último dato para que no sobre con el final */
+.dato:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.dato h3 {
+    margin-bottom: 8px;
+    color: var(--color-acento);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.dato p {
+    color: var(--color-suave);
+    font-size: 14px;
+}
+
+/* =====================================================
+   RESPONSIVE (tablet y móvil)
+   ===================================================== */
+
+/* Tablet: formulario y datos pasan a una sola columna */
+@media (max-width: 900px) {
+    .contacto-cajas {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Móvil: menos padding y títulos más compactos */
+@media (max-width: 600px) {
+    .contacto {
+        padding: 40px 20px;
+    }
+
+    .formulario-caja,
+    .datos-caja {
+        padding: 25px 20px;
+    }
+}
