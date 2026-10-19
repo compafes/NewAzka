@@ -1,7 +1,7 @@
 <?php
 // header.php - Encabezado global de AZKA
 // Cada página define $base antes de incluirlo:
-//   $base = "."   (desde frontend/)
+//   $base = "."   (desde frontend/index.php)
 //   $base = ".."  (desde frontend/pages/)
 // $paginaActual se usa para marcar el enlace de la página en el menú.
 
@@ -24,7 +24,7 @@ $paginaActual = basename($_SERVER["PHP_SELF"]);
         </ul>
 
         <div class="menu-usuario">
-            <a href="<?php echo $base; ?>/backend/login.php">CUENTA</a>
+            <a href="<?php echo $base; ?>/pages/cuenta.php" class="<?php echo $paginaActual == "cuenta.php" ? "actual" : ""; ?>">CUENTA</a>
             <a href="#" id="contador-carrito">CARRITO (0)</a>
         </div>
 

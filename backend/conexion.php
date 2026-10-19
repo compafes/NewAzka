@@ -1,5 +1,5 @@
 <?php
-// conexion.php - Conexión a MySQL con PDO (XAMPP: root sin contraseña)
+// conexion.php - Conexión a MySQL con PDO
 
 $dsn = "mysql:host=localhost;dbname=azka_instituto;charset=utf8mb4";
 $usuario = "root";
@@ -13,3 +13,4 @@ try {
     // No se muestra el error interno, solo un mensaje general
     die("Error al conectar con la base de datos.");
 }
+?>
