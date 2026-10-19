@@ -1,0 +1,172 @@
+/* =====================================================
+   AZKA - Estilos de la página Mi Cuenta
+   ===================================================== */
+
+.cuenta-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 30px 80px;
+}
+
+/* Header del título */
+.cuenta-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.cuenta-header .saludo {
+    color: var(--color-suave);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* Navegación pestañas + Cerrar sesión */
+.cuenta-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-borde);
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+}
+
+.cuenta-pestañas {
+    display: flex;
+    gap: 30px;
+}
+
+.cuenta-pestañas .pestaña {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--color-suave);
+    padding-bottom: 15px;
+    position: relative;
+    top: 16px;
+}
+
+.cuenta-pestañas .pestaña.activa {
+    color: var(--color-texto);
+    border-bottom: 2px solid var(--color-acento);
+}
+
+.btn-cerrar {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--color-acento);
+    font-weight: bold;
+}
+
+/* Grid principal a 2 columnas */
+.cuenta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 60px;
+}
+
+.cuenta-grid h2 {
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+/* Formulario Mis Datos */
+.form-datos .campo {
+    margin-bottom: 20px;
+}
+
+.form-datos label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--color-texto);
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-datos input {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    color: var(--color-texto);
+    font-size: 13px;
+    outline: none;
+}
+
+.form-datos input:focus {
+    border-color: var(--color-suave);
+}
+
+.btn-guardar {
+    margin-top: 10px;
+    padding: 14px 28px;
+    background-color: var(--color-acento);
+    color: var(--color-texto);
+    border: none;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-guardar:hover {
+    background-color: var(--color-acento-oscuro);
+}
+
+/* Tabla Mis Pedidos */
+.tabla-pedidos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+}
+
+.tabla-pedidos th {
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--color-suave);
+    padding-bottom: 15px;
+    font-weight: normal;
+}
+
+.tabla-pedidos td {
+    padding: 16px 0;
+    font-size: 12px;
+    border-top: 1px solid var(--color-borde);
+    color: var(--color-suave);
+}
+
+.tabla-pedidos .id-pedido {
+    color: var(--color-texto);
+    font-weight: bold;
+}
+
+.tabla-pedidos .estado-en-camino {
+    color: var(--color-acento);
+}
+
+.tabla-pedidos .link-ver {
+    color: var(--color-acento);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.ver-todos-pedidos {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--color-acento);
+    font-weight: bold;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 850px) {
+    .cuenta-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
