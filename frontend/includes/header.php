@@ -19,8 +19,8 @@ $paginaActual = basename($_SERVER["PHP_SELF"]);
         <ul class="menu-lista">
             <li><a href="<?php echo $base; ?>/index.php" class="<?php echo $paginaActual == "index.php" ? "actual" : ""; ?>">INICIO</a></li>
             <li><a href="<?php echo $base; ?>/pages/catalogo.php" class="<?php echo $paginaActual == "catalogo.php" ? "actual" : ""; ?>">CATÁLOGO</a></li>
-            <li><a href="<?php echo $base; ?>/pages/historia.html">HISTORIA</a></li>
-            <li><a href="<?php echo $base; ?>/pages/contacto.html">CONTACTO</a></li>
+            <li><a href="<?php echo $base; ?>/pages/historia.php" class="<?php echo $paginaActual == "historia.php" ? "actual" : ""; ?>">HISTORIA</a></li>
+            <li><a href="<?php echo $base; ?>/pages/contacto.php" class="<?php echo $paginaActual == "contacto.php" ? "actual" : ""; ?>">CONTACTO</a></li>
         </ul>
 
         <div class="menu-usuario">
