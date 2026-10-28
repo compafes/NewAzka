@@ -45,8 +45,8 @@
             <ul class="menu-lista">
                 <li><a href="../index.php">INICIO</a></li>
                 <li><a href="../pages/catalogo.php">CATÁLOGO</a></li>
-                <li><a href="../pages/historia.html" class="actual">HISTORIA</a></li>
-                <li><a href="../pages/contacto.html">CONTACTO</a></li>
+                <li><a href="../pages/historia.php" class="actual">HISTORIA</a></li>
+                <li><a href="../pages/contacto.php">CONTACTO</a></li>
             </ul>
 
             <div class="menu-usuario">

@@ -20,8 +20,8 @@
             <ul class="menu-lista">
                 <li><a href="../index.php">INICIO</a></li>
                 <li><a href="../pages/catalogo.php">CATÁLOGO</a></li>
-                <li><a href="../pages/historia.html">HISTORIA</a></li>
-                <li><a href="../pages/contacto.html" class="actual">CONTACTO</a></li>
+                <li><a href="../pages/historia.php">HISTORIA</a></li>
+                <li><a href="../pages/contacto.php" class="actual">CONTACTO</a></li>
             </ul>
 
             <div class="menu-usuario">
@@ -133,7 +133,7 @@
 
             <div class="pie-columna">
                 <h4>SOPORTE</h4>
-                <a href="../pages/contacto.html">Contacto</a>
+                <a href="../pages/contacto.php">Contacto</a>
             </div>
 
             <div class="pie-columna">
@@ -143,7 +143,7 @@
 
             <div class="pie-columna">
                 <h4>COMUNIDAD</h4>
-                <a href="../pages/historia.html">Historia</a>
+                <a href="../pages/historia.php">Historia</a>
             </div>
 
         </div>
